@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="black">#FF000000</color>
-    20   <color name="white">#FFFFFFFF</color>
-    21   <color name="brown">#FF4B2D29</color>
-    22   <color name="green">#FF42543C</color>
-    23   <color name="orange">#FFE29B33</color>
-    24   <color name="pink">#FFE9C7C7</color>
-    25   <color name="gray">#FF929292</color>
 
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brown">#FF4B2D29</color>
+    <color name="green">#FF42543C</color>
+    <color name="orange">#FFE29B33</color>
+    <color name="pink">#FFE9C7C7</color>
+    <color name="gray">#FF929292</color>
+
+
+
+    <color name="colorPrimary">#583F5A</color>
+    <color name="colorPrimaryDark">#573c6b</color>
+    <color name="colorAccent">#FF8B7C</color>
+    <color name="colorAccentDark">#EF6B7C</color>
+    <color name="Wheat">#F5DEB3</color>
+    <color name="colorPrimaryLight">#E1BEE7</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#727272</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorDivider">#B6B6B6</color>
+    <color name="colorWhite">#FFFFFFFF</color>
+    <color name="colorGray">#FF929292</color>
+    <color name="colorTransparent">#00FFFFFF</color>
 </resources>

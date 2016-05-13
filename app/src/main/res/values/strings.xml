@@ -48,6 +48,11 @@
     <string name="min"> Minutos</string>
     <string name="seg"> Segundos</string>
 
+    <string name="tvCanal1">Canal 1</string>
+    <string name="tvCanal2">Canal 2</string>
+    <string name="tvCanal3">Canal 3</string>
+    <string name="tvCanal4">Canal 4</string>
+
     <string name="colors_expandable_selector_title">COLORS</string>
 
 </resources>
