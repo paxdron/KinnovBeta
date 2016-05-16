@@ -2,5 +2,13 @@
 <resources>
     <declare-styleable name="ComponenteVariable">
         <attr name="nombre_campo" format="string" />
+        <attr name="valor" format="integer" />
+        <attr name="unidad" format="string" />
+    </declare-styleable>
+    <declare-styleable name="ComponenteBiseleccion">
+        <attr name="nombre_campo_bs" format="string" />
+        <attr name="valor_first" format="integer" />
+        <attr name="valor_last" format="integer" />
+        <attr name="unidad_bs" format="string" />
     </declare-styleable>
 </resources>

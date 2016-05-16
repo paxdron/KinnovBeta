@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ComponenteVariable="http://schemas.android.com/apk/res-auto"
+    xmlns:ComponenteBiseleccion="http://schemas.android.com/apk/res-auto"
     tools:context="com.padron.kinnov.Channels">
 
     <LinearLayout
@@ -25,36 +26,121 @@
         android:layout_above="@id/footerChanels"
         android:gravity="center"
         >
+        <com.paxdron.kinnovbeta.ComponenteStimMode
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:id="@+id/stim_mode"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="9"
-            android:layout_above="@id/footerChanels"
+            android:gravity="center"
+            >
+            <com.paxdron.kinnovbeta.ComponenteBiseleccion
+                android:id="@+id/carrier"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="3"
+                ComponenteBiseleccion:valor_first="1"
+                ComponenteBiseleccion:valor_last="4"
+                ComponenteBiseleccion:nombre_campo_bs="@string/carrier"
+                ComponenteBiseleccion:unidad_bs="@string/ms"
+                />
+            <com.paxdron.kinnovbeta.ComponenteBiseleccion
+                android:id="@+id/duracion_burst"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="3"
+                ComponenteBiseleccion:valor_first="2"
+                ComponenteBiseleccion:valor_last="4"
+                ComponenteBiseleccion:nombre_campo_bs="@string/duracion_burst"
+                ComponenteBiseleccion:unidad_bs="@string/ms"
+                />
+            <com.paxdron.kinnovbeta.ComponenteVariable
+                android:id="@+id/frecuencia_burst"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="3"
+                ComponenteVariable:nombre_campo="@string/frecuencia_burst"
+                ComponenteVariable:unidad="@string/hz"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="9"
             android:gravity="center"
             >
             <com.paxdron.kinnovbeta.ComponenteVariable
-                android:id="@+id/cv1"
+                android:id="@+id/rise"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_weight="3"
+                ComponenteVariable:nombre_campo="@string/rise"
+                ComponenteVariable:unidad="@string/s"
                 />
             <com.paxdron.kinnovbeta.ComponenteVariable
+                android:id="@+id/on"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_weight="3"
                 android:gravity="center"
+                android:layout_weight="3"
+                ComponenteVariable:nombre_campo="@string/on"
+                ComponenteVariable:unidad="@string/s"
                 />
             <com.paxdron.kinnovbeta.ComponenteVariable
+                android:id="@+id/decay"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                ComponenteVariable:nombre_campo="@string/stim_mode"
                 android:layout_weight="3"
+                ComponenteVariable:nombre_campo="@string/decay"
+                ComponenteVariable:unidad="@string/s"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="9"
+            android:gravity="center"
+            >
+            <com.paxdron.kinnovbeta.ComponenteVariable
+                android:id="@+id/off"
+                android:layout_weight="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                ComponenteVariable:nombre_campo="@string/off"
+                ComponenteVariable:unidad="@string/s"
+                />
+            <com.paxdron.kinnovbeta.ComponenteVariable
+                android:id="@+id/tiempo_aplicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="2"
+                ComponenteVariable:nombre_campo="@string/tiempo_aplicacion"
+                ComponenteVariable:unidad="@string/m"
                 />
         </LinearLayout>
     </LinearLayout>

@@ -45,6 +45,8 @@
     <string name="khz">KHz</string>
     <string name="hz"> Hz</string>
     <string name="ms"> ms</string>
+    <string name="s"> s</string>
+    <string name="m"> m</string>
     <string name="min"> Minutos</string>
     <string name="seg"> Segundos</string>
 

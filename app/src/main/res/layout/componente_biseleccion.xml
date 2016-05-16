@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/tvtitulo"
+        android:id="@+id/tvTitulo"
+        android:textAlignment="center"
+        />
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_first"
+            android:layout_width="@dimen/componente"
+            android:layout_height="@dimen/componente"
+            fancy:fb_defaultColor="@color/colorTransparent"
+            fancy:fb_borderColor="@color/colorPrimary"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_focusColor="@color/colorPrimaryDark"
+            fancy:fb_text=""
+            fancy:fb_radius="@dimen/componente"
+            fancy:fb_textColor="@color/colorPrimary"
+            fancy:fb_textSize="@dimen/textValue"
+            />
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_last"
+            android:layout_width="@dimen/componente"
+            android:layout_height="@dimen/componente"
+            fancy:fb_defaultColor="@color/colorTransparent"
+            fancy:fb_borderColor="@color/colorPrimary"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_focusColor="@color/colorPrimaryDark"
+            fancy:fb_text=""
+            fancy:fb_radius="@dimen/componente"
+            fancy:fb_textColor="@color/colorPrimary"
+            fancy:fb_textSize="@dimen/textValue"
+            />
+</merge>

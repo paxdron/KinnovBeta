@@ -2,6 +2,7 @@ package com.paxdron.kinnovbeta;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +16,12 @@ import mehdi.sakout.fancybuttons.FancyButton;
  */
 public class ComponenteVariable extends LinearLayout {
     FancyButton btnIncrease,btnValue,btnDecrease;
-    String titulo;
-    int btn_size;
-    TextView tvTitulo;
-    private boolean selected;
+    CollapseClass collapseClass=CollapseClass.getInstance();
+    private String titulo;
+    private int valor,id;
+    private TextView tvTitulo,tvValue;
+    private boolean isExpanded;
+    private String unidad;
     public ComponenteVariable(Context context) {
         super(context);
         initializeViews(context);
@@ -31,6 +34,11 @@ public class ComponenteVariable extends LinearLayout {
                 .obtainStyledAttributes(attrs, R.styleable.ComponenteVariable);
         titulo = typedArray
                 .getString(R.styleable.ComponenteVariable_nombre_campo);
+        setUnidad(typedArray
+                .getString(R.styleable.ComponenteVariable_unidad));
+        valor = typedArray
+                .getInteger(R.styleable.ComponenteVariable_valor, 0);
+
         typedArray.recycle();
         initializeViews(context);
     }
@@ -56,12 +64,7 @@ public class ComponenteVariable extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-
-        // Sets the images for the previous and next buttons. Uses
-        // built-in images so you don't need to add images, but in
-        // a real application your images should be in the
-        // application package so they are always available.
-        selected=false;
+        isExpanded=false;
         btnIncrease = (FancyButton) this
                 .findViewById(R.id.btnIncreaseValue);
         btnValue = (FancyButton) this
@@ -70,27 +73,55 @@ public class ComponenteVariable extends LinearLayout {
                         .findViewById(R.id.btnDecreaseValue);
         tvTitulo=(TextView)this.findViewById(R.id.tvTitulo);
         tvTitulo.setText(titulo);
+        tvValue=(TextView)this.findViewById(R.id.tvValue);
+        setValue(valor);
         btnIncrease.setVisibility(GONE);
         btnDecrease.setVisibility(GONE);
         btnValue.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!selected){
+                if (!isExpanded) {
+                    Values.itemSelected=id;
+                    collapseClass.notifica();
                     btnIncrease.setVisibility(VISIBLE);
                     btnDecrease.setVisibility(VISIBLE);
-                    selected=true;
-                }
-                else{
-                    collapse();
-                    selected=false;
+                    isExpanded = true;
+                } else {
+                    Collapse();
+                    isExpanded = false;
                 }
             }
         });
 
     }
-
-    public void collapse(){
-        btnIncrease.setVisibility(GONE);
-        btnDecrease.setVisibility(GONE);
+    public void setTypeface(Typeface font) {
+        //Typeface font=Typeface.createFromAsset(getContext().getAssets(), "fonts/OpenSans-Light.ttf");
+        tvTitulo.setTypeface(font);
     }
+    public void setValue(int valor){
+        this.valor=valor;
+        tvValue.setText(valor + unidad);
+    }
+
+
+    public void setUnidad(String unidad){
+        this.unidad=(unidad==null)?"":" "+unidad;
+    }
+
+    public int getIdentificador(){
+        return id;
+    }
+
+    public void Collapse(){
+        if(isExpanded) {
+            btnIncrease.setVisibility(GONE);
+            btnDecrease.setVisibility(GONE);
+            isExpanded=false;
+        }
+    }
+
+    public void setIdentificador(int id){
+        this.id=id;
+    }
+
 }
